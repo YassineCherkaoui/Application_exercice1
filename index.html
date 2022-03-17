@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <table id="tableData">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date de création</th>
+                <th>Etat</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Nom d'utilisateur</th>
+                <th>Matricule</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="Data">
+
+        </tbody>
+    </table>
+
+    <div class="container">
+        <button class="button" id="ModalBTN">Ajouter Utilisateur</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="my-form">
+                <div class="container">
+                    <h1 class="header">Ajouter d'utilisateurs</h1>
+                    <ul>
+                        <li>
+                            <div class="grid grid-2">
+                                <label for="firstName">Nom <input type="text" name="firstName" id="firstName"
+                                        required></label>
+
+                                <label for="lastName">Prénom <input type="text" name="lastName" id="lastName"
+                                        required></label>
+
+                                <label for="status">Etat <input type="text" name="status" id="status" required></label>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grid grid-2">
+                                <label for="userName">Nom d'utilisateur <input type="text" name="userName" id="userName"
+                                        required></label>
+
+                                <label for="createdDate">Date de création <input type="datetime-local" name="createdDate"
+                                        id="createdDate" required></label>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="grid grid-2">
+                                <label for="registrationNumber">Matricule <input type="text" name="registrationNumber"
+                                        id="registrationNumber" required></label>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="btn-ma">
+                                <button class="btn" id="SaveData">Enregistrer</button>
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </form>
+            
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="Script.js"></script>
+</body>
+
+</html>
