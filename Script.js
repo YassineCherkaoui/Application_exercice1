@@ -2,7 +2,7 @@
 var modal = document.getElementById("Modal");
 var btn = document.getElementById("ModalBTN");
 var span = document.getElementsByClassName("close")[0];
-
+//-------------Displat Modal-----------------
 btn.onclick = function () {
     modal.style.display = "block";
 }
@@ -14,10 +14,6 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-
-
-
-
 // -------------------Data--------------
 let users = [{
         id: "123456789",
@@ -50,7 +46,6 @@ let users = [{
 // ------- Display Table----------------
 let table = document.getElementById("Data");
 let row, cell;
-
 function ShowList() {
     for (let i = 0; i < users.length; i++) {
         row = table.insertRow();
@@ -94,40 +89,16 @@ function ShowList() {
     }
 
 }
-
-ShowList()
-// var shw = document.getElementById('ModalBTN');
-// shw.onclick = function (event) {
-//     testRow()
-//     ShowList()
-
-// }
-
-function testRow() {
-    // document.querySelector("#Data").remove();
+// -------Empty Row----------------
+function EmptyRow() {
     const tbody = document.getElementById("tableData").getElementsByTagName('tbody')[0];
     tbody.innerHTML = "";
 }
-
-
-
-
-
-
-
-
-
-
-users.push();
-
-
-
-
+ShowList()
+// -------Add Data----------------
 function handleSubmit(event) {
     event.preventDefault();
-
     const data = new FormData(event.target);
-
     const firstName = data.get('firstName');
     const lastName = data.get('lastName');
     const status = data.get('status');
@@ -147,26 +118,24 @@ function handleSubmit(event) {
     }
     users.push(new_data);
     modal.style.display = "none";
-    testRow()
+    EmptyRow()
     ShowList()
-
+    document.getElementById('firstName').value = ''
+    document.getElementById('lastName').value = ''
+    document.getElementById('status').value = ''
+    document.getElementById('userName').value = ''
+    document.getElementById('createdDate').value = ''
+    document.getElementById('registrationNumber').value = ''
 
 
 }
-
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
-
-
-
-
-
-
-
+// -------Remove Data----------------
 function Delete(params) { 
     users = users.filter(function (r) {
         return r.id !== params;
     });  
-    testRow();
+    EmptyRow();
     ShowList();
 }
